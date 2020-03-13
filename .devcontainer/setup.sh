@@ -1,5 +1,4 @@
 #!/bin/bash
 
-cd ~/
-mkdir .kube
+mkdir ~/.kube
 cp config ~/.kube/config
