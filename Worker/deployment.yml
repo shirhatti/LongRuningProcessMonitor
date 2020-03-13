@@ -13,13 +13,13 @@ spec:
     spec:
       containers:
       - name: worker
-        image: <your-prefix>.azurecr.io/worker:latest
+        image: bradygworkshop.azurecr.io/worker:latest
         resources:
           limits:
             memory: "128Mi"
             cpu: "500m"
         env:
           - name: "StorageConnectionString"
-            value: "<your connection string>"
+            value: ""
           - name: "HubProcessUrl"
             value: "http://web/process"
