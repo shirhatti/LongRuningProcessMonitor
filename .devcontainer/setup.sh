@@ -1,4 +1,4 @@
 #!/bin/bash
 
 mkdir ~/.kube
-cp config ~/.kube/config
+cp .devcontainer/config ~/.kube/config
