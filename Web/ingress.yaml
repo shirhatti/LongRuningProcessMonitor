@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+  generation: 2
+  name: workshop-ingress
+  namespace: workshop
+spec:
+  rules:
+  - host: <your-ingress>.<your-region>.cloudapp.azure.com
+    http:
+      paths:
+      - backend:
+          serviceName: web
+          servicePort: 80
+        path: /(.*)
+  tls:
+  - hosts:
+    - <your-ingress>.<your-region>.cloudapp.azure.com
+    secretName: tls-secret
