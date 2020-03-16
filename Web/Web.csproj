@@ -2,17 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>9331d616-dc8d-4def-8287-471df8f48514</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'WebWithLongRunningTaskDashboard' ">
     <StartAction>Project</StartAction>
     <ApplicationURL>http://localhost:5000;https://localhost:5001</ApplicationURL>
   </PropertyGroup>
+  
   <ItemGroup>
     <PackageReference Include="Microsoft.Azure.Storage.Queue" Version="11.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.10" />
   </ItemGroup>
     
-
-
-
 </Project>
